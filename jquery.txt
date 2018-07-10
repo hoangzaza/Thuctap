@@ -1,0 +1,141 @@
+Basic syntax is: $(selector).action()
+Examples:
+
+$(this).hide() - hides the current element.
+
+$("p").hide() - hides all <p> elements.
+
+$(".test").hide() - hides all elements with class="test".
+
+$("#test").hide() - hides the element with id="test".
+
+jQuery Selectors
+$("*")	Selects all elements
+$(this)	Selects the current HTML element
+$("p:first")	Selects the first <p> element
+$("ul li:first")	Selects the first <li> element of the first <ul>
+$("ul li:first-child")	Selects the first <li> element of every <ul>
+$("a[target='_blank']")	Selects all <a> elements with a target attribute value equal to "_blank"
+$("a[target!='_blank']")	Selects all <a> elements with a target attribute value NOT equal to "_blank"
+$(":button")	Selects all <button> elements and <input> elements of type="button"
+$("tr:even")	Selects all even <tr> elements	
+$("tr:odd")	Selects all odd <tr> elements
+
+jQuery Event Methods
+click
+$("p").click(function(){
+    $(this).hide();
+});
+double click
+$("p").dblclick(function(){
+    $(this).hide();
+});
+keo chuot qua p1
+$("#p1").mouseenter(function(){
+    alert("You entered p1!");
+});
+mouse leave
+$("#p1").mouseleave(function(){
+    alert("Bye! You now leave p1!");
+});
+mousedown
+$("#p1").mousedown(function(){
+    alert("Mouse down over p1!");
+});
+hover()
+
+focus
+$("input").focus(function(){
+        $(this).css("background-color", "#cccccc");
+    });
+	blur
+    $("input").blur(function(){
+        $(this).css("background-color", "#ffffff");
+    });
+	on
+	$("p").on({
+        mouseenter: function(){
+            $(this).css("background-color", "lightgray");
+        },  
+        mouseleave: function(){
+            $(this).css("background-color", "lightblue");
+        }, 
+        click: function(){
+            $(this).css("background-color", "yellow");
+        }  
+    });
+	
+	$(selector).hide(speed,callback); //(co the chi co speed la toc do an di)
+	$(selector).show(); hien
+	$("p").toggle(); // giong cong tac an 1 cai an di an cai nua lai hien
+	hien phan tu cung voi hieu ung
+	$("button").click(function(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+});
+an di cac phan tu voi hieu ung
+$("button").click(function(){
+    $("#div1").fadeOut();
+    $("#div2").fadeOut("slow");// an di cham (thoi gian)
+    $("#div3").fadeOut(3000);// thoi gian an di
+});
+toggle giong o tren co them hieu ung
+ $("button").click(function(){
+        $("#div1").fadeToggle();
+        $("#div2").fadeToggle("slow");
+        $("#div3").fadeToggle(3000);
+    });
+	lam mo di doi tuong 
+	 $("#div1").fadeTo("slow", 0.15); mo con 15%
+        $("#div2").fadeTo("slow", 0.4);
+        $("#div3").fadeTo("slow", 0.7);
+		slide down mot panel(hien panel theo hieu ung slideDown)
+		$("#panel").slideDown("slow");
+		an di panel theo hieu ung slideup
+		 $("#panel").slideUp();
+		 hien theo slidedown an di theo slideUp
+		  $("#panel").slideToggle();
+		  stop 1 animation
+	$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#panel").stop();
+    });
+});
+
+jQuery Callback
+ $("p").hide("slow", function(){
+        alert("The paragraph is now hidden");
+    });
+	
+	
+	get
+	text() - Sets or returns the text content of selected elements
+html() - Sets or returns the content of selected elements (including HTML markup)
+val() - Sets or returns the value of form fields
+Get Attributes
+$("#w3s").attr("href")
+
+set 
+$("#test1").text("Hello world!");
+$("#test2").html("<b>Hello world!</b>");
+$("#test3").val("Dolly Duck");
+$("#w3s").attr("href", "https://www.w3schools.com/jquery/");
+
+append() - Inserts content at the end of the selected elements
+prepend() - Inserts content at the beginning of the selected elements
+after() - Inserts content after the selected elements
+before() - Inserts content before the selected elements
+
+
+remove() - Removes the selected element (and its child elements)
+empty() - Removes the child elements from the selected element
+
+
+addClass() - Adds one or more classes to the selected elements
+removeClass() - Removes one or more classes from the selected elements
+toggleClass() - Toggles between adding/removing classes from the selected elements
+css() - Sets or returns the style attribute
